@@ -1,6 +1,6 @@
 from os.path import isfile, join, abspath
 from os import listdir, system
-
+from sys import argv
 
 def run():
     file_location = "/".join(abspath(__file__).split("/")[:-1]) + "/"
@@ -31,7 +31,7 @@ def run():
 
     system("cmake -S . -B build")
     system("cmake --build build")
-    system(f"./build/{choice[:-4]}")
+    system(f"clear && ./build/{choice[:-4]}{'' if len(argv) == 1 else ' ' + ' '.join(argv[1:])}")
 
 
 if __name__ == "__main__":
