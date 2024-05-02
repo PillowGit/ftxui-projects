@@ -19,9 +19,6 @@ if(NOT ftxui_POPULATED)
   add_subdirectory(${ftxui_SOURCE_DIR} ${ftxui_BINARY_DIR} EXCLUDE_FROM_ALL)
 endif()
 
-# Include libuiohook library for keyboard input library
-#find_package(uiohook REQUIRED)
-
 # Define executables
-add_executable(keylog src/keylog.cpp)
-target_link_libraries(keylog PRIVATE ftxui::component) #uiohook)
+add_executable(viewfile src/viewfile.cpp)
+target_link_libraries(viewfile PRIVATE ftxui::component)
